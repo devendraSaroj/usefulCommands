@@ -10,14 +10,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install NPM dependencies
-        run: npm install
-      - name: build
-        run: npm run build-storybook
+      # - name: Install NPM dependencies
+      #   run: npm install
+      # - name: build
+      #   run: npm run build-storybook
+      - name: Create report file
+        run: date +%s > report.txt
       - name: Commit changes
         run: |
           git config --global user.name devendra-saroj
           git config --global user.email devendrasaroj97@gmail.com
           git commit -am "Automated add storybook-static"
       - name: Push to gh-pages
-        run: git push
+        run: git push origin HEAD:deployment-action

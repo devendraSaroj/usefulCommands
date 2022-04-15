@@ -24,6 +24,6 @@ jobs:
           git commit -m "Automated add storybook-static"
       - name: Push to gh-pages
         run: |
-          git pull
-          git checkout deployment-action
+          git branch --show-current
+          git pull origin deployment-action
           git push origin HEAD:deployment-action

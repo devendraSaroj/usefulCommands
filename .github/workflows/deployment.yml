@@ -20,6 +20,7 @@ jobs:
         run: |
           git config --global user.name devendra-saroj
           git config --global user.email devendrasaroj97@gmail.com
-          git commit -am "Automated add storybook-static"
+          git add -A
+          git commit -m "Automated add storybook-static"
       - name: Push to gh-pages
         run: git push origin HEAD:deployment-action

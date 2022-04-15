@@ -10,17 +10,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: deployment-action
-      # - name: Install NPM dependencies
-      #   run: npm install
-      # - name: build
-      #   run: npm run build-storybook
-      - name: Create report file
-        run: date +%s > report.txt
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-      - name: Push to gh-pages
-        run: |
-          git branch --show-current
-          git push origin HEAD:dummy
+      - name: Build and deploy to storybook-static branch
+        uses: JamesIves/github-pages-deploy-action@2.0.3
+        env:
+          BRANCH: deployment-action
+          FOLDER: storybook-static
+          BUILD_SCRIPT: npm install && npm run build-storybook

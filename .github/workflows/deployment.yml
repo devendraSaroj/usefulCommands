@@ -19,7 +19,7 @@ jobs:
       - name: Create report file
         run: date +%s > report.txt
       - name: Commit changes
-      - uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v9
       - name: Push to gh-pages
         run: |
           git branch --show-current

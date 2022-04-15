@@ -21,8 +21,8 @@
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d storybook-static"
   },
   "peerDependencies": {
     "react": ">=16"

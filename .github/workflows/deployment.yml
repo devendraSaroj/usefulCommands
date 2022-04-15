@@ -16,10 +16,8 @@ jobs:
         run: npm run build-storybook
       - name: Commit changes
         run: |
-          git init
           git config --global user.name devendra-saroj
           git config --global user.email devendrasaroj97@gmail.com
           git commit -am "Automated add storybook-static"
-          git remote add origin git@github.com:devendraSaroj/usefulCommands.git
       - name: Push to gh-pages
-        run: git push origin gh-pages
+        run: git push

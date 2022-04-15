@@ -1,0 +1,18 @@
+name: Build and Deploy
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install NPM dependencies
+        run: npm install
+      - name: build
+        run: npm run build-storybook
+      - name: Push to gh-pages
+        run: git push origin gh-pages

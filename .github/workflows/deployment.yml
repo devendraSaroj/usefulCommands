@@ -25,5 +25,4 @@ jobs:
       - name: Push to gh-pages
         run: |
           git branch --show-current
-          git pull origin deployment-action
-          git push origin HEAD:deployment-action
+          git push origin HEAD:dummy

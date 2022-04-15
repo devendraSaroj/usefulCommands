@@ -25,4 +25,5 @@ jobs:
       - name: Push to gh-pages
         run: |
           git pull
+          git checkout deployment-action
           git push origin HEAD:deployment-action
